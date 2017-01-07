@@ -1,4 +1,5 @@
 class LinksController < ApplicationController
+
   def create
     @link = Link.new(link_params)
     if @link.save
@@ -9,7 +10,7 @@ class LinksController < ApplicationController
   end
 
   def index
-
+    @links = Link.all
   end
 
   private
