@@ -1,7 +1,8 @@
 <h1>HotReads Index</h1>
+<h2>Top 10 Links from URLLockBox</h2>
 
-<ul>
+<ol>
   <% @links.each do |link| %>
-    <li><%= link.url %></li>
+    <li><%= link.url %> with <%= link.submission_count %></li>
   <% end %>
-</ul>
+</ol>
