@@ -1,4 +1,4 @@
-class Api::V1::LinksController < ApplicationController
+class LinksController < ApplicationController
   def create
     @link = Link.new(link_params)
     if @link.save
@@ -8,8 +8,12 @@ class Api::V1::LinksController < ApplicationController
     end
   end
 
+  def index
+
+  end
+
   private
   def link_params
-    params.permit(:url, :read_date)
+    params.permit(:url)
   end
 end
