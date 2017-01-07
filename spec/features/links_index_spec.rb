@@ -20,4 +20,16 @@ RSpec.describe "Show Links" do
 
     expect(page).to have_selector("li", count: 10)
   end
+
+  it 'shows links from within 24 hours of update' do
+    Timecop.freeze(Date.today - 2) do
+      Link.create(url: "http://test.com")
+    end
+
+    Link.create(url: "http://www.google.com")
+
+    visit '/'
+
+    expect(page).to have_selector("li", count: 1)
+  end
 end

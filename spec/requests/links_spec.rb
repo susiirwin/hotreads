@@ -33,4 +33,6 @@ describe "Links API" do
     expect(Link.find_by(url: "http://www.google.com").submission_count).to eq(2)
     expect(Link.find_by(url: "http://www.yahoo.com").submission_count).to eq(1)
   end
+
+
 end

@@ -13,7 +13,7 @@ class LinksController < ApplicationController
 
   def index
     # limit @links to 10 total by ascending order of submission_count
-    @links = Link.order(submission_count: :desc).limit(10)
+    @links = Link.where(updated_at: (Time.now - 24.hours)..Time.now).order(submission_count: :desc).limit(10)
 
   end
 
